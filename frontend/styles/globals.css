@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  COZY BLOG THEME SYSTEM 
+  Goal: Warm, nostalgic, soft, "late night internet" feel.
+*/
+
+:root {
+  /* =========================
+     PALETTE: LIGHT (Cottage/Journal)
+     ========================= */
+  --bg-primary: #fdfbf7;
+  /* Warm cream paper */
+  --bg-secondary: #f4efe4;
+  /* Slightly darker parchment */
+  --bg-card: #ffffff;
+  /* Soft white */
+
+  --text-main: #2c2c2c;
+  /* Charcoal, never black */
+  --text-muted: #5e5c58;
+  /* Soft gray-brown */
+
+  --accent-primary: #8da399;
+  /* Muted sage */
+  --accent-warm: #dba388;
+  /* Terracotta */
+  --accent-soft: #c8d3d5;
+  /* Rainy blue-gray */
+
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+  --radius-card: 16px;
+  --radius-pill: 999px;
+}
+
+/* Dark mode using HTML attribute */
+html[data-theme="dark"] {
+  --bg-primary: #1a1b26;
+  --bg-secondary: #13141c;
+  --bg-card: #24283b;
+
+  --text-main: #e7e7f0;
+  --text-muted: #a4a4bb;
+
+  --accent-primary: #7aa2f7;
+  --accent-warm: #e0af68;
+  --accent-soft: #414868;
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* BASE */
+body {
+  background: hotpink;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.7;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Serif titles vibe */
+.serif-title {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Cozy reading width */
+.reading-width {
+  max-width: 760px;
+}
+
+/* Soft focus glow */
+.soft-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(141, 163, 153, 0.25);
+}
+
+/* Grain overlay */
+.paper-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Hover lift */
+.hover-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}

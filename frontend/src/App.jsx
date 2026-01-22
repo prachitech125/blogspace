@@ -1,9 +1,13 @@
-export default function App() {
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+
+function App() {
   return (
-    <div className="min-h-screen bg-[#FAFAF8] flex items-center justify-center">
-      <h1 className="text-3xl font-bold text-[#1C1C1E]">
-        Blogspace UI is ready ✅
-      </h1>
-    </div>
-  )
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
+
+export default App;
